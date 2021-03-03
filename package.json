@@ -19,6 +19,7 @@
   "homepage": "https://github.com/QFults/Week05-Day02#readme",
   "dependencies": {
     "chalk": "^4.1.0",
+    "inquirer": "^8.0.0",
     "mongoose": "^5.11.18"
   }
 }
