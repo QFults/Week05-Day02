@@ -1,3 +1,7 @@
-const greeting = require('./greeting.js')
+// const greeting = require('./greeting.js')
 
-greeting()
+// greeting()
+
+// const movies = require('./movies.js')
+
+// console.log(movies)
