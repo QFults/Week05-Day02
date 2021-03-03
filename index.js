@@ -12,24 +12,41 @@
 
 const inquirer = require('inquirer')
 
-inquirer.prompt([
-  {
-    type: 'input',
-    name: 'person',
-    message: 'What is your name?'
-  }, {
-    type: 'number',
-    name: 'age',
-    message: 'How old are you?'
-  },
-  {
-    type: 'list',
-    name: 'pet',
-    message: 'Choose your favorite type of pet',
-    choices: ['dog', 'cat', 'lizard', 'bird', 'snail']
-  }
-])
-  .then(res => {
-    console.log(res)
-  })
-  .catch(err => console.log(err))
+let people = []
+
+const question = () => {
+  inquirer.prompt([
+    {
+      type: 'input',
+      name: 'person',
+      message: 'What is your name?'
+    }, {
+      type: 'number',
+      name: 'age',
+      message: 'How old are you?'
+    },
+    {
+      type: 'list',
+      name: 'pet',
+      message: 'Choose your favorite type of pet',
+      choices: ['dog', 'cat', 'lizard', 'bird', 'snail']
+    },
+    {
+      type: 'confirm',
+      name: 'choice',
+      message: 'Continue?'
+    }
+  ])
+    .then(res => {
+      console.log(res)
+      people.push(res)
+      if (res.choice) {
+        question()
+      } else {
+        console.log(people)
+      }
+    })
+    .catch(err => console.log(err))
+}
+
+question()
