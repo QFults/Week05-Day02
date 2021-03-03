@@ -10,43 +10,51 @@
 
 // console.log(chalk.blue('Hello World!'))
 
-const inquirer = require('inquirer')
+// const inquirer = require('inquirer')
 
-let people = []
+// let people = []
 
-const question = () => {
-  inquirer.prompt([
-    {
-      type: 'input',
-      name: 'person',
-      message: 'What is your name?'
-    }, {
-      type: 'number',
-      name: 'age',
-      message: 'How old are you?'
-    },
-    {
-      type: 'list',
-      name: 'pet',
-      message: 'Choose your favorite type of pet',
-      choices: ['dog', 'cat', 'lizard', 'bird', 'snail']
-    },
-    {
-      type: 'confirm',
-      name: 'choice',
-      message: 'Continue?'
-    }
-  ])
-    .then(res => {
-      console.log(res)
-      people.push(res)
-      if (res.choice) {
-        question()
-      } else {
-        console.log(people)
-      }
-    })
-    .catch(err => console.log(err))
-}
+// const question = () => {
+//   inquirer.prompt([
+//     {
+//       type: 'input',
+//       name: 'person',
+//       message: 'What is your name?'
+//     }, {
+//       type: 'number',
+//       name: 'age',
+//       message: 'How old are you?'
+//     },
+//     {
+//       type: 'list',
+//       name: 'pet',
+//       message: 'Choose your favorite type of pet',
+//       choices: ['dog', 'cat', 'lizard', 'bird', 'snail']
+//     },
+//     {
+//       type: 'confirm',
+//       name: 'choice',
+//       message: 'Continue?'
+//     }
+//   ])
+//     .then(res => {
+//       console.log(res)
+//       people.push(res)
+//       if (res.choice) {
+//         question()
+//       } else {
+//         console.log(people)
+//       }
+//     })
+//     .catch(err => console.log(err))
+// }
 
-question()
+// question()
+
+// const axios = require('axios')
+
+// axios.get('https://pokeapi.co/api/v2/pokemon/ditto')
+//   .then(res => {
+//     console.log(res.data)
+//   })
+//   .catch(err => console.log(err))
